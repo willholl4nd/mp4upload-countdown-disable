@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Countdown Disabler",
+  "version": "1.0",
+  "description": "Disable countdown on specific website.",
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "toggle-countdown": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+D",
+        "mac": "Command+Shift+D"
+      },
+      "description": "Toggle countdown disabler"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.mp4upload.com/*"], // Change to the target website
+      "js": ["script.js"]
+    }
+  ]
+}
+
